@@ -19,7 +19,7 @@ head(letter_predictions)
 #table(letter_predictions, letters_test$letter) 
 agreement <- letter_predictions == letters_test$letter 
 prop.table(table(agreement)) 
-## Improving model performance ---- 
+## Improving model performance ----for non-linear 
 letter_classifier_rbf <- ksvm(letter ~ ., data = letters_train,
                               kernel = "rbfdot")
 letter_predictions_rbf <- predict(letter_classifier_rbf, letters_test)
